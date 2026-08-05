@@ -12,7 +12,7 @@ lstk status
 Start it when necessary:
 
 ```bash
-lstk start --type aws --persist
+./scripts/localstack-start
 ```
 
 ## Credentials Or Region Errors
@@ -33,23 +33,13 @@ The route only exists after the updated SAM template has been deployed. Rebuild 
 
 ```bash
 sam build
-lstk sam deploy \
-  --stack-name learning-localstack-dev \
-  --region eu-west-2 \
-  --capabilities CAPABILITY_IAM \
-  --resolve-s3 \
-  --no-confirm-changeset \
-  --no-fail-on-empty-changeset
+./scripts/localstack-deploy
 ```
 
 Retrieve the current API ID rather than reusing an old one:
 
 ```bash
-lstk aws cloudformation describe-stacks \
-  --stack-name learning-localstack-dev \
-  --region eu-west-2 \
-  --query "Stacks[0].Outputs[?OutputKey=='HelloWorldApiId'].OutputValue" \
-  --output text
+./scripts/localstack-api-test
 ```
 
 ## LocalStack DNS URL Does Not Work
@@ -78,9 +68,7 @@ ConflictException: Stage already exists
 LocalStack's CloudFormation state and API Gateway state may be out of sync after a failed rollback. For a complete local reset:
 
 ```bash
-lstk stop
-lstk reset
-lstk start --type aws --persist
+./scripts/localstack-reset
 ```
 
 Then redeploy the stack. This removes all LocalStack resources, not only this application.
