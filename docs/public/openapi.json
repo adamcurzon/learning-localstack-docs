@@ -36,6 +36,28 @@
     }
   ],
   "paths": {
+    "/": {
+      "get": {
+        "operationId": "getApiRoot",
+        "summary": "Get the API identity response",
+        "description": "Returns the identity message for the Learning LocalStack API.",
+        "responses": {
+          "200": {
+            "description": "Successful API identity response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiRootResponse"
+                },
+                "example": {
+                  "message": "learning-localstack-api"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/hello": {
       "get": {
         "operationId": "getHelloWorld",
@@ -100,6 +122,16 @@
           "message": {
             "type": "string",
             "example": "pong"
+          }
+        }
+      },
+      "ApiRootResponse": {
+        "type": "object",
+        "required": ["message"],
+        "properties": {
+          "message": {
+            "type": "string",
+            "example": "learning-localstack-api"
           }
         }
       }
