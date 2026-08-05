@@ -7,7 +7,9 @@ export default defineConfig({
   cleanUrls: true,
   themeConfig: {
     nav: [
-      {text: 'Guides', link: '/running-locally-with-localstack'},
+      {text: 'Get started', link: '/getting-started'},
+      {text: 'Local development', link: '/local-development'},
+      {text: 'AWS deployment', link: '/aws-deployment'},
       {text: 'API Reference', link: '/api/'},
       {text: 'Application repository', link: 'https://github.com/adamcurzon/learning-localstack'},
     ],
@@ -25,10 +27,11 @@ export default defineConfig({
         {
           text: 'Guides',
           items: [
-            {text: 'Running locally with LocalStack', link: '/running-locally-with-localstack'},
-            {text: 'Live AWS deployment', link: '/aws-live-deployment'},
-            {text: 'AWS setup plan', link: '/aws-setup-plan'},
-            {text: 'SAM and LocalStack plan', link: '/aws-sam-localstack-lambda-plan'},
+            {text: 'Getting started', link: '/getting-started'},
+            {text: 'Local development with LocalStack', link: '/local-development'},
+            {text: 'Deploying to AWS', link: '/aws-deployment'},
+            {text: 'Architecture', link: '/architecture'},
+            {text: 'Troubleshooting', link: '/troubleshooting'},
           ],
         },
       ],
