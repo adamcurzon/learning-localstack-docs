@@ -7,7 +7,7 @@ The current app contains one directly invoked Lambda:
 - Function logical ID: `HelloWorldFunction`
 - Stack name: `learning-localstack-dev`
 - Region: `eu-west-2`
-- HTTP route: `GET /hello`
+- HTTP routes: `GET /hello`, `GET /ping`
 - LocalStack endpoint: `http://localhost:4566`
 - Sample event: `events/hello.json`
 
@@ -116,7 +116,7 @@ API_ID=$(lstk aws cloudformation describe-stacks \
   --query "Stacks[0].Outputs[?OutputKey=='HelloWorldApiId'].OutputValue" \
   --output text)
 
-API_URL="http://localhost:4566/_aws/execute-api/${API_ID}/local/hello"
+API_URL="http://${API_ID}.execute-api.localhost.localstack.cloud:4566/local/hello"
 
 curl "$API_URL"
 ```
@@ -134,6 +134,19 @@ echo "$API_URL"
 ```
 
 Then paste the printed URL into Chrome.
+
+Test the ping route:
+
+```bash
+PING_URL="http://${API_ID}.execute-api.localhost.localstack.cloud:4566/local/ping"
+curl "$PING_URL"
+```
+
+Expected response:
+
+```json
+{"message":"pong"}
+```
 
 ## Invoke The Deployed LocalStack Lambda Directly
 
