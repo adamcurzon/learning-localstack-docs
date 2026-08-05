@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.3",
   "info": {
-    "title": "Learning LocalStack Hello World API",
+    "title": "Learning LocalStack API",
     "version": "1.0.0",
     "description": "A minimal Java 21 AWS Lambda exposed through API Gateway REST API. The API is deployed to AWS in eu-west-2 and can also be run locally with LocalStack."
   },

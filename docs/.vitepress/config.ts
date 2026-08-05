@@ -7,23 +7,29 @@ export default defineConfig({
   cleanUrls: true,
   themeConfig: {
     nav: [
-      {text: 'Get started', link: '/getting-started'},
-      {text: 'Local development', link: '/local-development'},
-      {text: 'AWS deployment', link: '/aws-deployment'},
-      {text: 'Changelog', link: '/changelog'},
-      {text: 'API Reference', link: '/api/'},
+      {
+        text: 'Guides',
+        items: [
+          {text: 'Get started', link: '/getting-started'},
+          {text: 'Local development', link: '/local-development'},
+          {text: 'AWS deployment', link: '/aws-deployment'},
+          {text: 'Architecture', link: '/architecture'},
+          {text: 'Troubleshooting', link: '/troubleshooting'},
+        ],
+      },
+      {
+        text: 'Documentation',
+        items: [
+          {text: 'Changelog', link: '/changelog'},
+          {text: 'API Reference', link: '/api/'},
+        ],
+      },
       {text: 'Application repository', link: 'https://github.com/adamcurzon/learning-localstack'},
     ],
     search: {
       provider: 'local',
     },
     sidebar: {
-      '/api/': [
-        {
-          text: 'API Reference',
-          items: [{text: 'Hello World API', link: '/api/'}],
-        },
-      ],
       '/': [
         {
           text: 'Guides',
@@ -33,7 +39,13 @@ export default defineConfig({
             {text: 'Deploying to AWS', link: '/aws-deployment'},
             {text: 'Architecture', link: '/architecture'},
             {text: 'Troubleshooting', link: '/troubleshooting'},
+          ],
+        },
+        {
+          text: 'Documentation',
+          items: [
             {text: 'Changelog', link: '/changelog'},
+            {text: 'API Reference', link: '/api/'},
           ],
         },
       ],
