@@ -20,6 +20,9 @@ features:
   - title: AWS deployment
     details: Deploy to eu-west-2 through GitHub Actions using AWS OIDC.
     link: /aws-deployment
+  - title: React frontend
+    details: Run locally with LocalStack and deploy the frontend to AWS Amplify.
+    link: /frontend
   - title: OpenAPI reference
     details: Browse the /hello and /ping routes and their JSON responses.
     link: /api/

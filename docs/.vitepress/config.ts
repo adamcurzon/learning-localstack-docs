@@ -13,6 +13,7 @@ export default defineConfig({
           {text: 'Get started', link: '/getting-started'},
           {text: 'Local development', link: '/local-development'},
           {text: 'AWS deployment', link: '/aws-deployment'},
+          {text: 'Frontend deployment', link: '/frontend'},
           {text: 'Architecture', link: '/architecture'},
           {text: 'Troubleshooting', link: '/troubleshooting'},
         ],
@@ -22,12 +23,6 @@ export default defineConfig({
         items: [
           {text: 'Changelog', link: '/changelog'},
           {text: 'API Reference', link: '/api/'},
-        ],
-      },
-      {
-        text: 'Unreleased',
-        items: [
-          {text: 'React frontend plan', link: '/unreleased/frontend-plan'},
         ],
       },
       {text: 'Application repository', link: 'https://github.com/adamcurzon/learning-localstack'},
@@ -43,6 +38,7 @@ export default defineConfig({
             {text: 'Getting started', link: '/getting-started'},
             {text: 'Local development with LocalStack', link: '/local-development'},
             {text: 'Deploying to AWS', link: '/aws-deployment'},
+            {text: 'Deploying the React frontend', link: '/frontend'},
             {text: 'Architecture', link: '/architecture'},
             {text: 'Troubleshooting', link: '/troubleshooting'},
           ],
@@ -52,12 +48,6 @@ export default defineConfig({
           items: [
             {text: 'Changelog', link: '/changelog'},
             {text: 'API Reference', link: '/api/'},
-          ],
-        },
-        {
-          text: 'Unreleased',
-          items: [
-            {text: 'React frontend plan', link: '/unreleased/frontend-plan'},
           ],
         },
       ],
