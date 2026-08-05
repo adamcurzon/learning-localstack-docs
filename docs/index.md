@@ -23,4 +23,7 @@ features:
   - title: OpenAPI reference
     details: Browse the /hello and /ping routes and their JSON responses.
     link: /api/
+  - title: Changelog
+    details: See the application release history and versioning policy.
+    link: /changelog
 ---
