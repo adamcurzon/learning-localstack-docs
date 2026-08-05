@@ -21,7 +21,7 @@ export default defineConfig({
       '/api/': [
         {
           text: 'API Reference',
-          items: [{text: 'Hello World API', link: '/api/'}],
+          items: [{text: 'Learning LocalStack API', link: '/api/'}],
         },
       ],
       '/': [
