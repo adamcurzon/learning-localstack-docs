@@ -1,0 +1,9 @@
+apis:
+  hello-world:
+    root: ./docs/public/openapi.json
+
+rules:
+  no-empty-servers: warn
+  operation-description: error
+  operation-summary: error
+  no-ambiguous-paths: error

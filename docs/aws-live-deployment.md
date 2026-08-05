@@ -1,6 +1,6 @@
 # Deploying The Hello World App To AWS
 
-This guide deploys the main `learning-localstack` application to real AWS. The Docusaurus documentation site is deployed separately through GitHub Pages.
+This guide deploys the main `learning-localstack` application to real AWS. The VitePress documentation site is deployed separately through GitHub Pages.
 
 The application is deployed to `eu-west-2` using AWS SAM and GitHub Actions.
 

@@ -33,7 +33,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build documentation
+      - name: Build VitePress documentation
         run: npm run build
 
       - name: Configure Pages
@@ -42,7 +42,7 @@ jobs:
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: build
+          path: docs/.vitepress/dist
 
       - name: Deploy to GitHub Pages
         id: deployment
