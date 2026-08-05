@@ -24,6 +24,12 @@ export default defineConfig({
           {text: 'API Reference', link: '/api/'},
         ],
       },
+      {
+        text: 'Unreleased',
+        items: [
+          {text: 'React frontend plan', link: '/unreleased/frontend-plan'},
+        ],
+      },
       {text: 'Application repository', link: 'https://github.com/adamcurzon/learning-localstack'},
     ],
     search: {
@@ -46,6 +52,12 @@ export default defineConfig({
           items: [
             {text: 'Changelog', link: '/changelog'},
             {text: 'API Reference', link: '/api/'},
+          ],
+        },
+        {
+          text: 'Unreleased',
+          items: [
+            {text: 'React frontend plan', link: '/unreleased/frontend-plan'},
           ],
         },
       ],
