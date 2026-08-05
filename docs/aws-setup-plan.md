@@ -14,7 +14,7 @@ The application consists of one Lambda function exposed through an API Gateway R
 Browser or HTTP client
         |
         v
-API Gateway: GET /hello
+API Gateway: GET /hello and GET /ping
         |
         v
 Lambda: Java 21 handler
@@ -27,7 +27,7 @@ The SAM template is the source of truth for the application infrastructure. Clou
 
 ### API Gateway
 
-`AWS::Serverless::Api` creates an API Gateway REST API with a `local` stage and a `GET /hello` route. The route is connected to `HelloWorldFunction` by the function event definition.
+`AWS::Serverless::Api` creates an API Gateway REST API with a `local` stage and `GET /hello` and `GET /ping` routes. Both routes are connected to `HelloWorldFunction` by the function event definitions.
 
 The deployed AWS URL follows this pattern:
 
@@ -188,6 +188,12 @@ The expected response is:
 
 ```json
 {"message":"hello world"}
+```
+
+The ping route is available at:
+
+```text
+https://<api-id>.execute-api.eu-west-2.amazonaws.com/local/ping
 ```
 
 View Lambda logs with:

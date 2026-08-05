@@ -21,7 +21,7 @@
       }
     },
     {
-      "url": "http://localhost:4566/_aws/execute-api/{apiId}/{stage}",
+      "url": "http://{apiId}.execute-api.localhost.localstack.cloud:4566/{stage}",
       "description": "LocalStack API Gateway",
       "variables": {
         "apiId": {
@@ -57,6 +57,28 @@
           }
         }
       }
+    },
+    "/ping": {
+      "get": {
+        "operationId": "getPing",
+        "summary": "Get the pong response",
+        "description": "Returns a pong response for health checks and connectivity tests.",
+        "responses": {
+          "200": {
+            "description": "Successful ping response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PingResponse"
+                },
+                "example": {
+                  "message": "pong"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -68,6 +90,16 @@
           "message": {
             "type": "string",
             "example": "hello world"
+          }
+        }
+      },
+      "PingResponse": {
+        "type": "object",
+        "required": ["message"],
+        "properties": {
+          "message": {
+            "type": "string",
+            "example": "pong"
           }
         }
       }

@@ -204,7 +204,9 @@ API_ID=$(lstk aws cloudformation describe-stacks \
   --region eu-west-2 \
   --query "Stacks[0].Outputs[?OutputKey=='HelloWorldApiId'].OutputValue" \
   --output text)
-curl "http://localhost:4566/_aws/execute-api/${API_ID}/local/hello"
+curl "http://${API_ID}.execute-api.localhost.localstack.cloud:4566/local/hello"
+
+curl "http://${API_ID}.execute-api.localhost.localstack.cloud:4566/local/ping"
 ```
 
 Use `lstk sam` and `lstk aws` for LocalStack validation so SAM and AWS CLI commands are automatically pointed at the local emulator.
