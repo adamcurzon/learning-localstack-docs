@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -23,6 +24,17 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+
+      - name: Check out application main
+        uses: actions/checkout@v4
+        with:
+          repository: adamcurzon/learning-localstack
+          ref: main
+          path: .app-source
+          persist-credentials: false
+
+      - name: Copy application changelog
+        run: cp .app-source/CHANGELOG.md docs/changelog.md
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
